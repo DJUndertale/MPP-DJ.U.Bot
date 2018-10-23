@@ -5,13 +5,13 @@ MPP.client.on(`a`, function(msg) {
     var input = msg.a.substring(cmd.length).trim();
 
 	// Non-commands
-	if (greetings.some(function(v) { return msg.a.toLowerCase().indexOf(v) >= 0; })) {
+	if (greetings.indexOf(msg.a.toLowerCase()) > -1) {
 		send(`Hello ${msg.p.name}! How are you today? Use /djhelp for a list of commands!`);
 		return;
 	}
 
 	// Commands
-	if(cmd.startsWith(prefix) == false){
+	if(msg.a.startsWith(prefix) == false){
 		return;
 	}
 
