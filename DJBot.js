@@ -1,8 +1,12 @@
 const prefix = "/";
 
 MPP.client.on(`a`, function(msg) {
-	var cmd = msg.a.split(' ')[0].toLowerCase();
+	var cmd = msg.a.substring(1,msg.a.length);
     var input = msg.a.substring(cmd.length).trim();
+
+	if(cmd.startsWith(prefix) == false){
+		return;
+	}
 
 	if (cmd == `djhelp`){
 		send(`DJ.U.Bot commands are: /djhelp, /djboom, and /djchatart`);
@@ -18,7 +22,7 @@ MPP.client.on(`a`, function(msg) {
 		send(`─────▄█░░▀▀▀▀▀░░█▄`);
 		send(`─▄▄──█░░░░░░░░░░░█──▄▄`);
 		send(`█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█`);
-	};
+	}
 	if (cmd == `djchatartdog`) {
 		send(`░▄▀▄▀▀▀▀▄▀▄░░░░░░░░░`);
 		send(`░█░░░░░░░░▀▄░░░░░░▄░`);
@@ -39,7 +43,7 @@ MPP.client.on(`a`, function(msg) {
 	if (cmd == `hi`) {
 		send(`Hello ${msg.p.name}! How are you today? Use /djhelp for a list of commands!`);
 	}
-}
+});
 
 // Message Functions
 function send(msg){
