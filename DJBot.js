@@ -7,6 +7,7 @@ MPP.client.on(`a`, function(msg) {
 	// Non-commands
 	if (greetings.some(function(v) { return msg.a.toLowerCase().indexOf(v) >= 0; })) {
 		send(`Hello ${msg.p.name}! How are you today? Use /djhelp for a list of commands!`);
+		return;
 	}
 
 	// Commands
@@ -18,18 +19,21 @@ MPP.client.on(`a`, function(msg) {
 		send(`DJ.U.Bot commands are:
 			/djhelp, /djboom, and /djchatart`
 		);
+		return;
 	}
 	if (cmd == `djchatart`){
 		send(`DJ.U.Bot chat art commands are:
 			/djchatartdog, /djchatartcat, and /djchatartfuck.
 			Please do not use any of these if I do not have crown.`
 		);
+		return;
 	}
 	if (cmd == `djchatartcat`) {
 		send(`──────▄▀▄─────▄▀▄`);
 		send(`─────▄█░░▀▀▀▀▀░░█▄`);
 		send(`─▄▄──█░░░░░░░░░░░█──▄▄`);
 		send(`█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█`);
+		return;
 	}
 	if (cmd == `djchatartdog`) {
 		send(`░▄▀▄▀▀▀▀▄▀▄░░░░░░░░░`);
@@ -42,11 +46,13 @@ MPP.client.on(`a`, function(msg) {
 		send(`░█░░▄▄░░▄▄▄▄░░▄▄░░█░`);
 		send(`░█░▄▀█░▄▀░░█░▄▀█░▄▀░`);
 		send(`░░▀░░░▀░░░░░▀░░░▀░░░`);
+		return;
 	}
 	if (cmd == `djchatartfuck`) {
 		send(`▒█▀▀▀ ▒█░▒█ ▒█▀▀█ ▒█░▄▀`);
 		send(`▒█▀▀▀ ▒█░▒█ ▒█░░░ ▒█▀▄░`);
 		send(`▒█░░░ ░▀▄▄▀ ▒█▄▄█ ▒█░▒█`);
+		return;
 	}
 });
 
